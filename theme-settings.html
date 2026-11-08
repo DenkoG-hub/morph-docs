@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Theme settings | Morph theme docs</title>
+    <meta name="description" content="Every Morph theme setting in theme editor order: logo, typography, layout, colors, tags and buttons, product cards, animations, cart, search and social media.">
+    <meta name="theme-color" content="#E4ECF2">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&amp;family=Figtree:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@600&amp;display=swap">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html"><span class="brand__stamp" aria-hidden="true">M</span>Morph <span class="brand__docs">docs</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="getting-started.html">Getting started</a></li>
+            <li><a href="theme-settings.html" aria-current="page">Theme settings</a></li>
+            <li><a href="sections.html">Sections</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support-policy.html">Support policy</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="container">
+        <div class="page-head">
+          <span class="eyebrow">Reference</span>
+          <div class="title-tag"><div class="title-tag__paper"><h1>Theme settings</h1></div></div>
+          <p class="lead">Theme settings apply to the whole store. In the theme editor, open <strong>Theme settings</strong> from the sidebar. The groups and settings below are in the order the editor shows them.</p>
+        </div>
+
+        <div class="doc-layout">
+          <nav class="toc" aria-labelledby="toc-heading">
+            <div class="toc__shadow" aria-hidden="true"><div class="receipt-paper"></div></div>
+            <div class="receipt">
+              <h2 id="toc-heading">Setting groups</h2>
+              <ol>
+                <li><a href="#logo">Logo</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#layout">Layout</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#tags-and-buttons">Tags and buttons</a></li>
+                <li><a href="#product-cards">Product cards</a></li>
+                <li><a href="#animations">Animations</a></li>
+                <li><a href="#cart">Cart</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#social-media">Social media</a></li>
+              </ol>
+            </div>
+          </nav>
+
+          <div class="doc-body">
+            <section class="doc-section" aria-labelledby="logo">
+              <div class="sheet bite">
+                <h2 id="logo">Logo</h2>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Logo</strong> <span class="meta">Image</span></dt>
+                    <dd>Your logo in the header. Add alt text in the image picker; without it, the store name is used. Without a logo, the header shows your store name.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Logo width</strong> <span class="meta">60–240px · default 140px</span></dt>
+                    <dd>Maximum width. Tall and square logos shrink to fit the header height.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show logo stamp</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Used when no logo is uploaded: a round stamp with the first letters of the first two words of your store name sits next to the store name. The stamp is decoration only.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Favicon</strong> <span class="meta">Image</span></dt>
+                    <dd>The small icon in browser tabs and bookmarks. A 32 x 32px .png is recommended.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="typography">
+              <div class="sheet bite">
+                <h2 id="typography">Typography</h2>
+                <p class="subhead">Fonts</p>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Heading font</strong> <span class="meta">Font · Bricolage Grotesque</span></dt>
+                    <dd>The font for headings. Pick any font from the Shopify font library.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Body font</strong> <span class="meta">Font · Figtree</span></dt>
+                    <dd>The font for body text. Its bold, italic and bold italic styles load automatically.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Label font</strong> <span class="meta">Font · IBM Plex Mono</span></dt>
+                    <dd>The font for small labels across the store, such as subheadings, tags, stickers, tickets and receipt lines.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Heading size</strong> <span class="meta">80–120% · default 100%</span></dt>
+                    <dd>Makes every heading smaller or larger.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="layout">
+              <div class="sheet bite">
+                <h2 id="layout">Layout</h2>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Page width</strong> <span class="meta">Standard · Wide (default)</span></dt>
+                    <dd>The largest width of the page content: <strong>Standard</strong> is 1240px and <strong>Wide</strong> is 1440px. Sections with <strong>Full page width</strong> turned on still reach the edges of the screen.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Page margin</strong> <span class="meta">16–48px · default 32px</span></dt>
+                    <dd>The space between the content and the edges of the screen. Margin on mobile is always 16px.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show back to top button</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Shows a button once the page has scrolled past one screen. It takes customers back to the top and moves keyboard focus to the start of the main content.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="colors">
+              <div class="sheet bite">
+                <h2 id="colors">Colors</h2>
+                <p>Morph comes with seven color schemes. Click a scheme to edit it, or add a new one. Each section picks a scheme with its <strong>Color scheme</strong> setting. For what each scheme is used for, see <a href="getting-started.html#colors">Color schemes</a>.</p>
+                <dl class="settings">
+                  <div class="setting"><dt><strong>Background</strong></dt><dd>The ground of the section.</dd></div>
+                  <div class="setting"><dt><strong>Card background</strong></dt><dd>The paper of cards, labels, receipts and tickets.</dd></div>
+                  <div class="setting"><dt><strong>Card text</strong></dt><dd>Text on the card background.</dd></div>
+                  <div class="setting"><dt><strong>Text</strong></dt><dd>Main text on the background.</dd></div>
+                  <div class="setting"><dt><strong>Secondary text</strong></dt><dd>Quieter text, such as subheadings, notes and secondary details.</dd></div>
+                  <div class="setting"><dt><strong>Borders</strong></dt><dd>Lines and field borders.</dd></div>
+                  <div class="setting"><dt><strong>Accent background</strong></dt><dd>Colors price tags, sale stickers, ticket stubs and the cart count.</dd></div>
+                  <div class="setting"><dt><strong>Accent text</strong></dt><dd>Text on the accent background.</dd></div>
+                  <div class="setting"><dt><strong>Focus ring</strong></dt><dd>Outlines buttons, links and fields selected with the keyboard.</dd></div>
+                  <div class="setting"><dt><strong>Button background</strong></dt><dd>The fill of buttons.</dd></div>
+                  <div class="setting"><dt><strong>Button label</strong></dt><dd>The text on buttons.</dd></div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="tags-and-buttons">
+              <div class="sheet bite">
+                <h2 id="tags-and-buttons">Tags and buttons</h2>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Corner bite size</strong> <span class="meta">Small · Medium (default) · Large</span></dt>
+                    <dd>The size of the round bites cut out of the corners of cards, tags, tickets and buttons.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Tilt tags and stickers</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Price tags and stickers hang at a slight angle. Turn it off to show them straight.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="product-cards">
+              <div class="sheet bite">
+                <h2 id="product-cards">Product cards</h2>
+                <p>These settings apply to product cards everywhere: collection pages, search results, Featured collection, Related products, Recently viewed and other sections.</p>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Image ratio</strong> <span class="meta">Square (default) · Portrait · Landscape</span></dt>
+                    <dd>The shape of the card image.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Image fit</strong> <span class="meta">Crop (default) · Fit</span></dt>
+                    <dd><strong>Crop</strong> fills the frame. <strong>Fit</strong> shows the whole image on a tinted panel.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Subheading</strong> <span class="meta">Vendor (default) · Product type · SKU · None</span></dt>
+                    <dd>The small line shown with the title in the card's label strip.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show stickers</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Shows one sticker on each card: Sold out first, then your own sticker, then Sale. For your own sticker, add a product tag such as <code>sticker:New</code> (20 characters max).</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show second image on hover</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Shows the product's second media on devices with a mouse.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show color swatches</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Uses the swatches set on product options. Up to 5 show on each card. A swatch switches the card to that variant, including its image, so attach an image to each variant. See <a href="getting-started.html#variant-images">Variant images and swatches</a>.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show quick add</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Adds a small ticket to each card. <strong>Add</strong> puts a product with one variant straight into the cart. <strong>Options</strong> opens the product's options in the card for products with more variants. Sold out products show <strong>Sold out</strong>.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show quick view</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>A <strong>Quick view</strong> tag on the card image opens the product's images, videos and buy buttons without leaving the page. Quick view shows the selected variant's image, so attach an image to each variant. It shows no description: <strong>View full details</strong> leads to the product page.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="animations">
+              <div class="sheet bite">
+                <h2 id="animations">Animations</h2>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Animate page changes</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>In browsers that support it, pages fade into each other as customers move around the store. Between two collection pages, product cards that are in both glide to their new place.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Animate tags and buttons on hover</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Motion on hover with a mouse, such as cards lifting and price tags swinging. Turn it off for a calmer store.</dd>
+                  </div>
+                </dl>
+                <p>Customers who set their device to reduce motion don't see these animations, whatever these settings are.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="cart">
+              <div class="sheet bite">
+                <h2 id="cart">Cart</h2>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Cart type</strong> <span class="meta">Drawer (default) · Page</span></dt>
+                    <dd><strong>Drawer</strong>: the cart opens as a receipt over the page, and adding a product opens it. <strong>Page</strong>: the cart icon and adding a product lead to the cart page.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Show cart note</strong> <span class="meta">Checkbox · off</span></dt>
+                    <dd>Adds a note field to the cart drawer and the cart page, so customers can add instructions to their order.</dd>
+                  </div>
+                  <div class="setting">
+                    <dt><strong>Gift wrap product</strong> <span class="meta">Product</span></dt>
+                    <dd>Adds an <strong>Add gift wrap</strong> checkbox to the cart drawer and cart page. Checking it adds this product once, at its own price. Hidden while the product is unavailable.</dd>
+                    <dd>The product must be available on the Online Store sales channel. To keep it out of search, set the <code>seo.hidden</code> metafield to <code>1</code> on it. Gift wrap left alone in the cart is removed automatically. See <a href="getting-started.html#gift-wrap">Gift wrap</a>.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="search">
+              <div class="sheet bite">
+                <h2 id="search">Search</h2>
+                <dl class="settings">
+                  <div class="setting">
+                    <dt><strong>Show search suggestions</strong> <span class="meta">Checkbox · on</span></dt>
+                    <dd>Shows products, collections, pages, articles and query suggestions as customers type.</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="social-media">
+              <div class="sheet bite">
+                <h2 id="social-media">Social media</h2>
+                <p>Add the full link to each profile. Platforms without a link are hidden. The fields are <strong>Facebook</strong>, <strong>Instagram</strong>, <strong>YouTube</strong>, <strong>TikTok</strong>, <strong>X (Twitter)</strong>, <strong>Pinterest</strong>, <strong>Snapchat</strong>, <strong>Tumblr</strong>, <strong>Vimeo</strong>, <strong>LinkedIn</strong> and <strong>Threads</strong>.</p>
+                <ul>
+                  <li>In the footer, the <strong>Social media icons</strong> block shows the profiles linked here. When no links are set, the block (the demo's <em>Follow along</em> column) is hidden on the storefront.</li>
+                  <li>For search engines, the home page automatically adds Organization data: your store name, logo and these social links.</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; 2026 Denko Themes. Morph version 1.0.0.</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support-policy.html">Support policy</a></li>
+            <li><a href="mailto:denkothemes@gmail.com">denkothemes@gmail.com</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

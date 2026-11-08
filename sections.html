@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sections | Morph theme docs</title>
+    <meta name="description" content="Every Morph section and block, grouped by where it lives, with its settings in theme editor order.">
+    <meta name="theme-color" content="#E4ECF2">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&amp;family=Figtree:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@600&amp;display=swap">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html"><span class="brand__stamp" aria-hidden="true">M</span>Morph <span class="brand__docs">docs</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="getting-started.html">Getting started</a></li>
+            <li><a href="theme-settings.html">Theme settings</a></li>
+            <li><a href="sections.html" aria-current="page">Sections</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support-policy.html">Support policy</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="container">
+        <div class="page-head">
+          <span class="eyebrow">Reference</span>
+          <div class="title-tag"><div class="title-tag__paper"><h1>Sections</h1></div></div>
+          <p class="lead">Every section and block you can add or edit in the theme editor, grouped by where it lives. Settings are listed in the order the editor shows them. Settings that apply to the whole store are on the <a href="theme-settings.html">Theme settings</a> page.</p>
+        </div>
+
+        <div class="doc-layout">
+          <nav class="toc" aria-labelledby="toc-heading">
+            <div class="toc__shadow" aria-hidden="true"><div class="receipt-paper"></div></div>
+            <div class="receipt">
+              <h2 id="toc-heading">On this page</h2>
+              <ol>
+                <li><a href="#header-group">Header group</a>
+                  <ol>
+                    <li><a href="#announcement-bar">Announcement bar</a></li>
+                    <li><a href="#header">Header</a></li>
+                  </ol>
+                </li>
+                <li><a href="#footer-group">Footer group</a></li>
+                <li><a href="#popups">Popups</a></li>
+                <li><a href="#home-page">Home page sections</a>
+                  <ol>
+                    <li><a href="#slideshow">Slideshow</a></li>
+                    <li><a href="#collection-list">Collection list</a></li>
+                    <li><a href="#featured-collection">Featured collection</a></li>
+                    <li><a href="#promo-tiles">Promo tiles</a></li>
+                    <li><a href="#lookbook">Lookbook</a></li>
+                    <li><a href="#image-with-text">Image with text</a></li>
+                    <li><a href="#featured-product">Featured product</a></li>
+                    <li><a href="#before-and-after">Before and after</a></li>
+                    <li><a href="#blog-posts">Blog posts</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#press-receipt">Press receipt</a></li>
+                    <li><a href="#rich-text">Rich text</a></li>
+                    <li><a href="#collapsible-content">Collapsible content</a></li>
+                    <li><a href="#trust-badges">Trust badges</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#recently-viewed">Recently viewed</a></li>
+                    <li><a href="#custom-section">Custom section</a></li>
+                    <li><a href="#custom-liquid">Custom Liquid</a></li>
+                  </ol>
+                </li>
+                <li><a href="#product-page">Product page</a>
+                  <ol>
+                    <li><a href="#product">Product section</a></li>
+                    <li><a href="#product-blocks">Product blocks</a></li>
+                    <li><a href="#related-products">Related products</a></li>
+                  </ol>
+                </li>
+                <li><a href="#collection-page">Collection page</a></li>
+                <li><a href="#search-page">Search page</a></li>
+                <li><a href="#cart">Cart drawer and cart page</a></li>
+                <li><a href="#blog-page">Blog page</a></li>
+                <li><a href="#article-page">Article page</a></li>
+                <li><a href="#page-template">Page</a></li>
+                <li><a href="#contact-page">Contact page</a></li>
+                <li><a href="#faq-page">FAQ page</a></li>
+                <li><a href="#collections-list-page">Collections list page</a></li>
+                <li><a href="#not-found">404 page</a></li>
+                <li><a href="#gift-card">Gift card page</a></li>
+                <li><a href="#password-page">Password page</a></li>
+              </ol>
+            </div>
+          </nav>
+
+          <div class="doc-body">
+
+            <!-- Header group -->
+            <section class="doc-section" aria-labelledby="header-group">
+              <div class="sheet bite">
+                <h2 id="header-group">Header group</h2>
+                <p class="where">Shown at the top of every page. In the editor it's the <strong>Header</strong> group at the top of the sidebar.</p>
+
+                <div class="item">
+                  <h3 id="announcement-bar">Announcement bar</h3>
+                  <p>Short messages on a strip of tape above the header.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The bar's colors. The demo uses the dark Scheme 6.</dd></div>
+                    <div class="setting"><dt><strong>Use moving tape</strong> <span class="meta">Checkbox · on</span></dt><dd>Moves the messages along the tape. Messages that fit on one line stay still.</dd></div>
+                    <div class="setting"><dt><strong>Speed</strong> <span class="meta">Slow · Normal · Fast</span></dt><dd>How fast the tape moves.</dd></div>
+                  </dl>
+                  <h4>Announcement block (up to 12)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Text</strong></dt><dd>The message.</dd></div>
+                    <div class="setting"><dt><strong>Link</strong></dt><dd>Makes the whole message a link. Links inside the text are then shown as plain text.</dd></div>
+                    <div class="setting"><dt><strong>Open link in new window</strong></dt><dd>Opens the link in a new browser tab.</dd></div>
+                  </dl>
+                  <p>Only add messages that are true for your store. Replace the demo messages with your own.</p>
+                </div>
+
+                <div class="item">
+                  <h3 id="header">Header</h3>
+                  <p>Your logo or store name, the main menu, search, the account icon and the cart. The logo itself is set in <strong>Theme settings → Logo</strong>.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The header's colors.</dd></div>
+                    <div class="setting"><dt><strong>Enable sticky header</strong> <span class="meta">Checkbox · on</span></dt><dd>Keeps the header in view while customers scroll. After scrolling, only the logo row stays visible.</dd></div>
+                    <div class="setting"><dt><strong>Menu</strong></dt><dd>The menu for the header and the mobile menu. Up to three levels show.</dd></div>
+                    <div class="setting"><dt><strong>Menu style</strong> <span class="meta">Ticket strip · Mega menu</span></dt><dd><strong>Mega menu</strong> shows every link of a dropdown at once in a wide panel. The mobile menu always uses the ticket strip. See <a href="getting-started.html#menus">Menus</a>.</dd></div>
+                    <div class="setting"><dt><strong>Customer account menu</strong></dt><dd>The links in the account menu that opens from the account icon.</dd></div>
+                  </dl>
+                  <h4>Menu promo block</h4>
+                  <p>An image, heading and text at the end of one dropdown, and under that item in the mobile menu.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Menu item</strong></dt><dd>Type the exact title of a top-level menu item that has a dropdown. Capital letters and spaces at the ends don't matter. One promo per item: if two blocks name the same item, the first one shows.</dd></div>
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>Shown at its own ratio.</dd></div>
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>The promo's heading. A promo without an image, heading or text is hidden.</dd></div>
+                    <div class="setting"><dt><strong>Text</strong></dt><dd>A short line under the heading.</dd></div>
+                    <div class="setting"><dt><strong>Link</strong></dt><dd>The heading links here, and the whole promo becomes clickable. Needs a heading.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Footer group -->
+            <section class="doc-section" aria-labelledby="footer-group">
+              <div class="sheet bite">
+                <h2 id="footer-group">Footer group</h2>
+                <p class="where">Shown at the bottom of every page. The <strong>Footer</strong> section holds up to 5 blocks, shown as columns.</p>
+                <div class="item">
+                  <h3 id="footer">Footer</h3>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The footer's colors. The demo uses the dark Scheme 6.</dd></div>
+                    <div class="setting"><dt><strong>Show Follow on Shop</strong> <span class="meta">Checkbox · on</span></dt><dd>Shows the button only when Shop Pay is turned on in <strong>Settings → Payments</strong> and the Shop sales channel is installed, and this setting is checked. See <a href="getting-started.html#follow-on-shop">Follow on Shop</a>.</dd></div>
+                    <div class="setting"><dt><strong>Show payment icons</strong> <span class="meta">Checkbox · on</span></dt><dd>Shows the icons of the payment methods your store accepts.</dd></div>
+                  </dl>
+                  <p class="subhead">Country and language</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Show country or region selector</strong> <span class="meta">Checkbox · on</span></dt><dd>Shown when your store sells to more than one country or region. Add them under Markets in your Shopify admin.</dd></div>
+                    <div class="setting"><dt><strong>Show language selector</strong> <span class="meta">Checkbox · on</span></dt><dd>Shown when your store has more than one language. Add them under Languages in your Shopify admin.</dd></div>
+                  </dl>
+                  <h4>Menu block</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>Uses the menu title when empty.</dd></div>
+                    <div class="setting"><dt><strong>Menu</strong></dt><dd>The menu to list. New Menu blocks start with your footer menu.</dd></div>
+                  </dl>
+                  <h4>Text block</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>The column heading.</dd></div>
+                    <div class="setting"><dt><strong>Text</strong></dt><dd>A few words about your store.</dd></div>
+                    <div class="setting"><dt><strong>Link label</strong></dt><dd>Uses the page title when empty. The link is hidden when no page is selected.</dd></div>
+                    <div class="setting"><dt><strong>Link page</strong></dt><dd>The page the link opens, such as your contact page.</dd></div>
+                  </dl>
+                  <h4>Email signup block</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong> and <strong>Text</strong></dt><dd>Shown above the email field. Signups are added to your customer list as subscribed to email marketing.</dd></div>
+                  </dl>
+                  <h4>Social media icons block</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>The column heading. The icons are the profiles linked in <strong>Theme settings → Social media</strong>. When no profile is linked, the whole column (the demo's <em>Follow along</em>) is hidden on the storefront.</dd></div>
+                  </dl>
+                  <h4>Image block</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>A logo, badge or other image. A 360px wide .png is recommended.</dd></div>
+                    <div class="setting"><dt><strong>Image width</strong> <span class="meta">60–360px</span></dt><dd>How wide the image shows.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Popups -->
+            <section class="doc-section" aria-labelledby="popups">
+              <div class="sheet bite">
+                <h2 id="popups">Popups</h2>
+                <p class="where">The <strong>Popups</strong> group at the bottom of the sidebar, shown on every page.</p>
+                <div class="item">
+                  <h3 id="promo-popup">Promo popup</h3>
+                  <p>An email signup popup. Signups are added to your customer list as subscribed to email marketing. The popup opens once for each customer. In the theme editor, it shows while this section is selected. To stop showing it, hide or remove the section.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>Shows at its own ratio. Landscape and square images fit best.</dd></div>
+                    <div class="setting"><dt><strong>Heading</strong> and <strong>Text</strong></dt><dd>The popup's message.</dd></div>
+                    <div class="setting"><dt><strong>Discount code</strong></dt><dd>Shown only after a successful signup. Create the code in Discounts first; the theme doesn't create or check it.</dd></div>
+                    <div class="setting"><dt><strong>Delay before opening</strong> <span class="meta">0–30s</span></dt><dd>How long the popup waits after a page loads.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The popup's colors.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Home page -->
+            <section class="doc-section" aria-labelledby="home-page">
+              <div class="sheet bite">
+                <h2 id="home-page">Home page sections</h2>
+                <p class="where">Add these with <strong>Add section</strong>. Most of them also work on other pages, such as product, collection and page templates. Every section has a <strong>Color scheme</strong> setting, and most have a <strong>Subheading</strong> and <strong>Heading</strong>.</p>
+
+                <div class="item">
+                  <h3 id="slideshow">Slideshow</h3>
+                  <p>Large slides with a label card that holds the text and buttons. Images are never cropped. Each image keeps its own ratio, and its height is capped so the label card shows in the first view: a tall image gets narrower instead of being cut.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The section's colors.</dd></div>
+                    <div class="setting"><dt><strong>Text layout</strong> <span class="meta">On image · Below image</span></dt><dd>Where the label card sits.</dd></div>
+                    <div class="setting"><dt><strong>Full page width</strong> <span class="meta">Checkbox · on</span></dt><dd>Lets the slides reach the edges of the screen. A slide with a tall image gets narrower and is centered.</dd></div>
+                    <div class="setting"><dt><strong>Change slides automatically</strong> <span class="meta">Checkbox · off</span></dt><dd>Slides stop changing once a customer uses a control, and never change for customers who prefer reduced motion.</dd></div>
+                    <div class="setting"><dt><strong>Change slides every</strong> <span class="meta">3–10s</span></dt><dd>Time between slides.</dd></div>
+                  </dl>
+                  <h4>Slide block (up to 10)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>16:9 aspect ratio or wider recommended. The tallest slide sets the height.</dd></div>
+                    <div class="setting"><dt><strong>Mobile image</strong></dt><dd>Shown on screens under 750px wide. The tallest slide sets the height, so keep its ratio close to your other images.</dd></div>
+                    <div class="setting"><dt><strong>Video</strong></dt><dd>Plays muted in a loop instead of the image.</dd></div>
+                    <div class="setting"><dt><strong>Subheading</strong>, <strong>Heading</strong> and <strong>Text</strong></dt><dd>The text on the label card.</dd></div>
+                    <div class="setting"><dt><strong>Button label</strong> and <strong>Button link</strong></dt><dd>The main button, a ticket stub.</dd></div>
+                    <div class="setting"><dt><strong>Second button label</strong> and <strong>Second button link</strong></dt><dd>An optional second button.</dd></div>
+                    <div class="setting"><dt><strong>Text position</strong> <span class="meta">Left · Center · Right</span></dt><dd>Where the label card sits across the slide.</dd></div>
+                    <div class="setting"><dt><strong>Vertical position</strong> <span class="meta">Top · Middle · Bottom</span></dt><dd>Only used when the text shows on the image.</dd></div>
+                    <div class="setting"><dt><strong>Card color scheme</strong></dt><dd>The colors of the label card.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="collection-list">Collection list</h3>
+                  <p>Cards for the collections you pick.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Collections</strong></dt><dd>The collections to show.</dd></div>
+                    <div class="setting"><dt><strong>Collections per row on desktop</strong> <span class="meta">2–6</span></dt><dd>Cards in a row on large screens.</dd></div>
+                    <div class="setting"><dt><strong>Collections per row on mobile</strong> <span class="meta">1 · 2</span></dt><dd>Cards in a row on small screens.</dd></div>
+                    <div class="setting"><dt><strong>Show product count</strong></dt><dd>Shows how many products each collection has.</dd></div>
+                    <div class="setting"><dt><strong>Show view all link</strong></dt><dd>Adds a link to the page that lists all your collections.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="featured-collection">Featured collection</h3>
+                  <p>Product cards from one collection.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Collection</strong></dt><dd>The collection to show.</dd></div>
+                    <div class="setting"><dt><strong>Products to show</strong> <span class="meta">2–16</span></dt><dd>How many products show.</dd></div>
+                    <div class="setting"><dt><strong>Products per row on desktop</strong> <span class="meta">2–5</span> and <strong>Products per row on mobile</strong> <span class="meta">1 · 2</span></dt><dd>Cards in a row.</dd></div>
+                    <div class="setting"><dt><strong>Show view all link</strong></dt><dd>Adds a link to the collection page.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="promo-tiles">Promo tiles</h3>
+                  <p>Image tiles with a ticket stub that link to a collection, product or page.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Image ratio</strong> <span class="meta">Adapt to image · Landscape 3:2 · Square · Portrait 4:5</span></dt><dd>Adapt to image shows every photo whole, so tiles in a row can differ in height.</dd></div>
+                    <div class="setting"><dt><strong>Tiles per row on desktop</strong> <span class="meta">1–3</span></dt><dd>Tiles in a row on large screens.</dd></div>
+                    <div class="setting"><dt><strong>Tile layout</strong> <span class="meta">Stub at the side · Stub at the bottom</span></dt><dd>Tiles always show the stub at the bottom on screens under 750px wide.</dd></div>
+                  </dl>
+                  <h4>Tile block (up to 6)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>Follows the section's image ratio. Fixed ratios crop around the focal point.</dd></div>
+                    <div class="setting"><dt><strong>Subheading</strong>, <strong>Heading</strong>, <strong>Text</strong></dt><dd>The tile's text.</dd></div>
+                    <div class="setting"><dt><strong>Button label</strong></dt><dd>Shown on the tile's stub. Without a label, the tile has no stub.</dd></div>
+                    <div class="setting"><dt><strong>Link</strong></dt><dd>Where the tile leads.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The tile's own colors.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="lookbook">Lookbook</h3>
+                  <p>A photo with numbered pins. Each pin hangs a small price tag for a product, and a Shop the look receipt beside the photo lists the same products.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>Pins keep their place on the image at every size. The image is never cropped.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Image position</strong> <span class="meta">Left · Right</span></dt><dd>Which side the photo sits on.</dd></div>
+                    <div class="setting"><dt><strong>Show receipt</strong></dt><dd>Lists the products in a Shop the look receipt. On screens under 750px wide it is the way to shop, so keep it on.</dd></div>
+                    <div class="setting"><dt><strong>Show quick add</strong></dt><dd>Adds quick add to the receipt rows. Also follows the <strong>Show quick add</strong> setting in theme settings.</dd></div>
+                  </dl>
+                  <h4>Product tag block (up to 8)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Product</strong></dt><dd>The product the pin points to.</dd></div>
+                    <div class="setting"><dt><strong>Horizontal position</strong> and <strong>Vertical position</strong> <span class="meta">0–100%</span></dt><dd>Percent from the left or top edge of the image.</dd></div>
+                    <div class="setting"><dt><strong>Tag side</strong> <span class="meta">Left · Right</span></dt><dd>Flips to the other side near the image edge.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="image-with-text">Image with text</h3>
+                  <p>An image beside a paper card with your text and buttons.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Image</strong></dt><dd>The image.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The section's colors.</dd></div>
+                    <div class="setting"><dt><strong>Image position</strong> <span class="meta">Left · Right</span></dt><dd>Which side the image sits on.</dd></div>
+                    <div class="setting"><dt><strong>Image width</strong> <span class="meta">Small · Medium · Large</span></dt><dd>How much room the image takes.</dd></div>
+                    <div class="setting"><dt><strong>Vertical alignment</strong> <span class="meta">Top · Middle · Bottom</span></dt><dd>Where the card sits next to the image.</dd></div>
+                    <div class="setting"><dt><strong>Show tape</strong></dt><dd>Shows a strip of tape on the image.</dd></div>
+                    <div class="setting"><dt><strong>Card label</strong></dt><dd>Shows on the card's top strip.</dd></div>
+                  </dl>
+                  <h4>Blocks</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Subheading</strong>, <strong>Heading</strong>, <strong>Text</strong></dt><dd>Text blocks, in any order.</dd></div>
+                    <div class="setting"><dt><strong>Button</strong>: <strong>Button label</strong>, <strong>Button link</strong>, <strong>Button style</strong> <span class="meta">Ticket · Tag</span></dt><dd>A ticket stub button or a smaller tag button.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="featured-product">Featured product</h3>
+                  <p>One product with its media and buy buttons, on any page.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Product</strong></dt><dd>The product to show.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong> and <strong>Subheading</strong></dt><dd>The section's colors and a small line above the title.</dd></div>
+                    <div class="setting"><dt><strong>Show image zoom</strong></dt><dd>Lets customers open the images larger.</dd></div>
+                    <div class="setting"><dt><strong>Loop videos</strong></dt><dd>Plays product videos in a loop.</dd></div>
+                    <div class="setting"><dt><strong>Show full details link</strong></dt><dd>Adds a link to the product page.</dd></div>
+                  </dl>
+                  <p>Its blocks are the same as the <a href="#product-blocks">product blocks</a>, without Complementary products.</p>
+                </div>
+
+                <div class="item">
+                  <h3 id="before-and-after">Before and after</h3>
+                  <p>Two images on top of each other with a divider customers drag to compare them. Use two images with the same ratio, taken from the same spot, so the details line up.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Before image</strong> and <strong>After image</strong></dt><dd>The two images.</dd></div>
+                    <div class="setting"><dt><strong>Before label</strong> and <strong>After label</strong></dt><dd>Shown as a sticker on the image. Leave empty to hide it.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Image ratio</strong> <span class="meta">Adapt to image · Landscape 3:2 · Square · Portrait 4:5</span></dt><dd>With Adapt to image, the frame takes the before image's ratio and the after image fills it around its focal point.</dd></div>
+                    <div class="setting"><dt><strong>Frame width</strong> <span class="meta">Narrow · Medium · Wide</span></dt><dd>How wide the frame is.</dd></div>
+                    <div class="setting"><dt><strong>Divider start position</strong> <span class="meta">10–90%</span></dt><dd>Where the divider sits when the page opens.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="blog-posts">Blog posts</h3>
+                  <p>Article cards from one blog. The image frame of every card takes the ratio of the first article's image, and other images are shown whole on a tinted panel. Cards look best when all featured images share one ratio, such as 3:2.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Blog</strong></dt><dd>The blog to show.</dd></div>
+                    <div class="setting"><dt><strong>Posts to show</strong> <span class="meta">2–6</span> and <strong>Posts per row on desktop</strong> <span class="meta">2–4</span></dt><dd>How many cards show, and how many in a row.</dd></div>
+                    <div class="setting"><dt><strong>Show author</strong> and <strong>Show date</strong></dt><dd>Show the author and publish date on each card.</dd></div>
+                    <div class="setting"><dt><strong>Show view all link</strong></dt><dd>Adds a link to the blog.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="newsletter">Newsletter</h3>
+                  <p>An email signup on a receipt. Signups are added to your customer list as subscribed to email marketing.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The section's colors.</dd></div>
+                    <div class="setting"><dt><strong>Receipt width</strong> <span class="meta">Narrow · Wide</span></dt><dd>How wide the receipt is.</dd></div>
+                  </dl>
+                  <h4>Blocks</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Subheading</strong>, <strong>Heading</strong>, <strong>Text</strong></dt><dd>Text blocks.</dd></div>
+                    <div class="setting"><dt><strong>Email form</strong></dt><dd>The email field and button. One per section.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="press-receipt">Press receipt</h3>
+                  <p>Quotes from articles about your store, printed on a receipt. Add it with <strong>Press quotes</strong>.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Receipt width</strong> <span class="meta">Narrow · Wide</span></dt><dd>With 4 or more quotes, the receipt gets wider on screens 990px and wider and prints in two columns.</dd></div>
+                  </dl>
+                  <h4>Quote block (up to 8)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Publication</strong></dt><dd>The name of the publication.</dd></div>
+                    <div class="setting"><dt><strong>Logo</strong></dt><dd>Shown instead of the publication name, at its own ratio. A transparent .png or .svg works best.</dd></div>
+                    <div class="setting"><dt><strong>Quote</strong></dt><dd>40 words max. Only quote real articles.</dd></div>
+                    <div class="setting"><dt><strong>Date</strong></dt><dd>When the article was published.</dd></div>
+                    <div class="setting"><dt><strong>Link label</strong> and <strong>Link</strong></dt><dd>Uses Read article when empty. The link is hidden when no link is added.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="rich-text">Rich text</h3>
+                  <p>Headings, text and buttons, optionally on a paper card.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The section's colors.</dd></div>
+                    <div class="setting"><dt><strong>Alignment</strong> <span class="meta">Left · Center</span></dt><dd>Text alignment.</dd></div>
+                    <div class="setting"><dt><strong>Show paper card</strong></dt><dd>Puts the content on a paper card.</dd></div>
+                    <div class="setting"><dt><strong>Card label</strong></dt><dd>Shows on the card's top strip.</dd></div>
+                    <div class="setting"><dt><strong>Content width</strong> <span class="meta">Narrow · Medium · Wide</span></dt><dd>How wide the text runs.</dd></div>
+                  </dl>
+                  <h4>Blocks</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Subheading</strong> and <strong>Text</strong></dt><dd>Text blocks.</dd></div>
+                    <div class="setting"><dt><strong>Heading</strong>: <strong>Heading size</strong> <span class="meta">Medium · Large · Extra large</span></dt><dd>A heading in one of three sizes.</dd></div>
+                    <div class="setting"><dt><strong>Button</strong>: <strong>Button label</strong>, <strong>Button link</strong>, <strong>Button style</strong> <span class="meta">Ticket · Tag</span></dt><dd>A button.</dd></div>
+                    <div class="setting"><dt><strong>Sticker</strong>: <strong>Text</strong></dt><dd>A small sticker, 12 characters max. One per section.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="collapsible-content">Collapsible content</h3>
+                  <p>Questions or topics that open and close, such as an FAQ.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong>, <strong>Text</strong></dt><dd>The section's colors and intro.</dd></div>
+                    <div class="setting"><dt><strong>Content width</strong> <span class="meta">Narrow · Medium · Wide</span></dt><dd>How wide the rows run.</dd></div>
+                    <div class="setting"><dt><strong>Open first row</strong></dt><dd>Opens the first row when the page loads.</dd></div>
+                  </dl>
+                  <h4>Row block (up to 24)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>The question or topic.</dd></div>
+                    <div class="setting"><dt><strong>Content</strong></dt><dd>The answer. A row without a heading or content is hidden.</dd></div>
+                    <div class="setting"><dt><strong>Page</strong></dt><dd>Replaces the content when a page is selected.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="trust-badges">Trust badges</h3>
+                  <p>A row of short promises with an icon, such as secure checkout or your return policy. Only add claims that are true for your store.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                  </dl>
+                  <h4>Trust badge block (up to 4)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Icon</strong> <span class="meta">Lock · Box · Return arrow · Chat bubble</span></dt><dd>The badge's icon.</dd></div>
+                    <div class="setting"><dt><strong>Text</strong></dt><dd>Hidden when empty. A new badge block starts with the text <em>Secure checkout</em>: change it to what this badge should say.</dd></div>
+                    <div class="setting"><dt><strong>Link</strong></dt><dd>Optional, such as a policy page.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="video">Video</h3>
+                  <p>A YouTube, Vimeo or Shopify-hosted video with a cover image.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>YouTube or Vimeo link</strong></dt><dd>The video's address.</dd></div>
+                    <div class="setting"><dt><strong>Shopify-hosted video</strong></dt><dd>Plays instead of the YouTube or Vimeo link.</dd></div>
+                    <div class="setting"><dt><strong>Video description</strong></dt><dd>Describes the video for customers using screen readers.</dd></div>
+                    <div class="setting"><dt><strong>Cover image</strong></dt><dd>Shown until the video plays, never cropped. Without one, a Shopify-hosted video shows its own preview image.</dd></div>
+                    <div class="setting"><dt><strong>Loop video</strong></dt><dd>Only for Shopify-hosted videos.</dd></div>
+                    <div class="setting"><dt><strong>Full page width</strong></dt><dd>Lets the video reach the edges of the screen.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="recently-viewed">Recently viewed</h3>
+                  <p>Product cards for the products a customer last opened in this browser. It stays hidden until the customer has viewed other products, and the product on the page is never shown. In the theme editor it shows a message instead.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Products to show</strong> <span class="meta">2–12</span></dt><dd>The most products shown.</dd></div>
+                    <div class="setting"><dt><strong>Products per row on desktop</strong> and <strong>Products per row on mobile</strong></dt><dd>Cards in a row.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="custom-section">Custom section</h3>
+                  <p>An empty section you build from theme blocks.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong> and <strong>Background</strong></dt><dd>The section's colors and an optional background image.</dd></div>
+                  </dl>
+                  <h4>Theme blocks</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Column</strong> and <strong>Row</strong> (Group): <strong>Layout direction</strong> <span class="meta">Horizontal · Vertical</span>, <strong>Alignment</strong> <span class="meta">Left · Center · Right</span>, <strong>Padding</strong> <span class="meta">0–200px</span></dt><dd>Groups other blocks in a column or a row. Groups can hold more blocks.</dd></div>
+                    <div class="setting"><dt><strong>Text</strong>: <strong>Text</strong>, <strong>Text style</strong> <span class="meta">Heading · Subheading · Normal text</span>, <strong>Alignment</strong></dt><dd>A line of text.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="custom-liquid">Custom Liquid</h3>
+                  <p>For app snippets or other Liquid code.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Custom Liquid</strong></dt><dd>Add app snippets or other Liquid code. We can't support code you add here.</dd></div>
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Top padding</strong>, <strong>Bottom padding</strong></dt><dd>The section's colors and spacing.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Product page -->
+            <section class="doc-section" aria-labelledby="product-page">
+              <div class="sheet bite">
+                <h2 id="product-page">Product page</h2>
+                <p class="where">The product template holds the <strong>Product</strong> section, <strong>Related products</strong> and <strong>Recently viewed</strong>. The demo also has an alternate product template, <em>textile</em>, with a <strong>Size chart</strong> block.</p>
+
+                <div class="item">
+                  <h3 id="product">Product section</h3>
+                  <p>The product's media gallery beside a label-style info column built from blocks.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The section's colors.</dd></div>
+                    <div class="setting"><dt><strong>Show breadcrumbs</strong> <span class="meta">Checkbox · on</span></dt><dd>Shows only when there is a level between Home and the current page, such as a product opened from a collection. A product opened from search or a direct link shows no breadcrumbs.</dd></div>
+                    <div class="setting"><dt><strong>Show image zoom</strong></dt><dd>Lets customers open the images larger.</dd></div>
+                    <div class="setting"><dt><strong>Loop videos</strong></dt><dd>Plays product videos in a loop.</dd></div>
+                    <div class="setting"><dt><strong>Show sticky add to cart</strong> <span class="meta">Checkbox · on</span></dt><dd>Shows a bar with the add to cart button at the bottom of the screen once the buy buttons scroll out of view. Needs a buy buttons block.</dd></div>
+                  </dl>
+                </div>
+
+                <div class="item">
+                  <h3 id="product-blocks">Product blocks</h3>
+                  <p>Add, remove and reorder these in the Product section. <strong>Featured product</strong> uses the same blocks, without Complementary products.</p>
+                  <h4>Title, Vendor, SKU, Description, Share</h4>
+                  <p>No settings. Each shows its part of the product once.</p>
+                  <h4>Price</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Show taxes note</strong></dt><dd>Adds the line about taxes, as set in your store.</dd></div>
+                  </dl>
+                  <h4>Inventory</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Show low stock below</strong> <span class="meta">2–50</span></dt><dd>Shown for variants that track stock and stop selling at zero.</dd></div>
+                  </dl>
+                  <h4>Text</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Text</strong></dt><dd>Extra text. Can be connected to a product metafield.</dd></div>
+                  </dl>
+                  <h4>Variant picker</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Picker style</strong> <span class="meta">Buttons · Dropdown</span></dt><dd>How options show.</dd></div>
+                    <div class="setting"><dt><strong>Show swatches</strong></dt><dd>Uses the swatches set on product options. Options with swatches show as swatches, even with the dropdown style. See <a href="getting-started.html#variant-images">Variant images and swatches</a>.</dd></div>
+                  </dl>
+                  <h4 id="buy-buttons-block">Buy buttons</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Show quantity selector</strong></dt><dd>Shows the quantity field.</dd></div>
+                    <div class="setting"><dt><strong>Show dynamic checkout buttons</strong></dt><dd>Shows the accelerated checkout buttons your store offers.</dd></div>
+                    <div class="setting"><dt><strong>Show installments</strong></dt><dd>Shows Shop Pay Installments when your store offers them.</dd></div>
+                    <div class="setting"><dt><strong>Show gift card recipient form</strong></dt><dd>Lets customers send a gift card product to someone else by email.</dd></div>
+                    <div class="setting"><dt><strong>Show pickup availability</strong></dt><dd>Shows when a location with local pickup has the selected variant in stock. See <a href="getting-started.html#pickup">Local pickup</a>.</dd></div>
+                    <div class="setting"><dt><strong>Show back in stock form</strong></dt><dd>Shows a <strong>Notify me</strong> button on sold out variants. Requests arrive as contact form emails with the product and variant. Customers aren't alerted automatically, so reply to them yourself when the product is back. The form isn't shown in quick view.</dd></div>
+                  </dl>
+                  <h4 id="product-label-block">Product label</h4>
+                  <p>Product details printed like a label, with tabs.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Show details tab</strong></dt><dd>Shows the vendor, type, SKU, weight and barcode the product has.</dd></div>
+                    <div class="setting"><dt><strong>Custom tab 1</strong> to <strong>Custom tab 4</strong>: <strong>Heading</strong>, <strong>Content</strong>, <strong>Page</strong></dt><dd>Each tab has a heading and content. A tab without a heading or content is hidden. A selected page replaces the content.</dd></div>
+                  </dl>
+                  <p>To show different content on each product, such as care, ingredients or shipping details, connect the tab's <strong>Content</strong> to a product metafield: click the dynamic source icon next to <strong>Content</strong> and pick the metafield.</p>
+                  <h4 id="size-chart-block">Size chart</h4>
+                  <p>Shows a <strong>Size chart</strong> button beside one option of the variant picker, which opens the chart.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Option name</strong></dt><dd>Must match the name of an option on the product, such as Size. Capital letters don't matter.</dd></div>
+                    <div class="setting"><dt><strong>Content</strong></dt><dd>The chart. Connect a product metafield with dynamic sources to show a different size chart on each product.</dd></div>
+                    <div class="setting"><dt><strong>Page</strong></dt><dd>A picked page wins over the content.</dd></div>
+                  </dl>
+                  <p>The button is hidden when the product has no option with that name, when there is no content, and on products with only one variant.</p>
+                  <h4>Collapsible row</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>The row's title.</dd></div>
+                    <div class="setting"><dt><strong>Content</strong></dt><dd>Connect a product metafield with dynamic sources to show different content on each product. A row without a heading or content is hidden.</dd></div>
+                    <div class="setting"><dt><strong>Page</strong></dt><dd>Replaces the content when a page is selected.</dd></div>
+                    <div class="setting"><dt><strong>Open by default</strong></dt><dd>Opens the row when the page loads.</dd></div>
+                  </dl>
+                  <h4 id="trust-badges-block">Trust badges</h4>
+                  <p>Up to 4 rows under a torn receipt edge. A row without text is hidden. Only add claims that are true for your store.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Row 1</strong> to <strong>Row 4</strong>: <strong>Icon</strong>, <strong>Text</strong>, <strong>Link</strong></dt><dd>Each row's icon, text and an optional link, such as a policy page. Row 1 starts with <em>Secure checkout</em>.</dd></div>
+                  </dl>
+                  <h4 id="complementary-products-block">Complementary products</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>Starts as <em>Goes with</em>.</dd></div>
+                    <div class="setting"><dt><strong>Products to show</strong> <span class="meta">1–10</span></dt><dd>The most products shown.</dd></div>
+                  </dl>
+                  <p>Shows only when complementary products are set for that product in the Search &amp; Discovery app; otherwise the block stays hidden. See <a href="getting-started.html#complementary">Complementary products</a>.</p>
+                  <h4>Custom Liquid and apps</h4>
+                  <p><strong>Custom Liquid</strong> adds app snippets or other Liquid code. App blocks from your apps can be added here too.</p>
+                </div>
+
+                <div class="item">
+                  <h3 id="related-products">Related products</h3>
+                  <p>Product cards with Shopify's automatic recommendations for the product. Only on product pages.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong>, <strong>Subheading</strong>, <strong>Heading</strong></dt><dd>The section's colors and heading.</dd></div>
+                    <div class="setting"><dt><strong>Products to show</strong> <span class="meta">2–10</span></dt><dd>The most products shown.</dd></div>
+                    <div class="setting"><dt><strong>Products per row on desktop</strong> and <strong>Products per row on mobile</strong></dt><dd>Cards in a row.</dd></div>
+                  </dl>
+                  <p>The product template also holds <a href="#recently-viewed">Recently viewed</a>.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Collection -->
+            <section class="doc-section" aria-labelledby="collection-page">
+              <div class="sheet bite">
+                <h2 id="collection-page">Collection page</h2>
+                <div class="item">
+                  <h3 id="collection">Collection</h3>
+                  <p>A banner with the collection's title, description and image, category tags on a string, then filters, sorting and the product grid.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Tint collections automatically</strong></dt><dd>Gives each collection one of the three color schemes below. Add a collection tint block to choose the tint for a collection.</dd></div>
+                    <div class="setting"><dt><strong>First tint color scheme</strong>, <strong>Second tint color scheme</strong>, <strong>Third tint color scheme</strong></dt><dd>The schemes used for automatic tints.</dd></div>
+                    <div class="setting"><dt><strong>Banner size</strong> <span class="meta">Small · Medium · Large</span></dt><dd>The size of the banner.</dd></div>
+                    <div class="setting"><dt><strong>Show collection image</strong> and <strong>Show collection description</strong></dt><dd>Show them in the banner.</dd></div>
+                    <div class="setting"><dt><strong>Category menu</strong></dt><dd>Shows the menu's links as tags. Use a different menu than the header menu.</dd></div>
+                    <div class="setting"><dt><strong>Category collections</strong></dt><dd>Shown as tags after the category menu's links. Leave both empty to show up to 12 collections.</dd></div>
+                    <div class="setting"><dt><strong>Show product count</strong></dt><dd>Shows the number of products.</dd></div>
+                    <div class="setting"><dt><strong>Show filters</strong></dt><dd>Set up the filters in the Shopify Search and Discovery app. See <a href="getting-started.html#filters">Filters</a>.</dd></div>
+                    <div class="setting"><dt><strong>Show sorting</strong></dt><dd>Lets customers sort the products.</dd></div>
+                    <div class="setting"><dt><strong>Products per page</strong> <span class="meta">8–48</span></dt><dd>Products before the next page.</dd></div>
+                    <div class="setting"><dt><strong>Products per row on desktop</strong> and <strong>Products per row on mobile</strong></dt><dd>Cards in a row.</dd></div>
+                  </dl>
+                  <h4>Collection tint block</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Collection</strong></dt><dd>Open this collection in the preview to see its tint.</dd></div>
+                    <div class="setting"><dt><strong>Tint color scheme</strong></dt><dd>Its background tints the page. Light color schemes keep text readable, and a tint that makes text hard to read is weakened.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Search -->
+            <section class="doc-section" aria-labelledby="search-page">
+              <div class="sheet bite">
+                <h2 id="search-page">Search page</h2>
+                <div class="item">
+                  <h3 id="search">Search</h3>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Suggested searches</strong></dt><dd>Shows the menu's links as tags when the search field is empty. Link each tag to a search page address, such as /search?q=gift.</dd></div>
+                    <div class="setting"><dt><strong>Show filters</strong> and <strong>Show sorting</strong></dt><dd>Filters come from the Search &amp; Discovery app.</dd></div>
+                    <div class="setting"><dt><strong>Results per page</strong> <span class="meta">8–48</span></dt><dd>Results before the next page.</dd></div>
+                    <div class="setting"><dt><strong>Products per row on desktop</strong> and <strong>Products per row on mobile</strong></dt><dd>Cards in a row.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Cart -->
+            <section class="doc-section" aria-labelledby="cart">
+              <div class="sheet bite">
+                <h2 id="cart">Cart drawer and cart page</h2>
+                <p class="where">Choose between them in <strong>Theme settings → Cart → Cart type</strong>. Gift wrap and the cart note are set there too.</p>
+                <div class="item">
+                  <h3 id="cart-drawer">Cart drawer</h3>
+                  <p>The cart as a receipt printed from a small printer at the top of the screen.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The drawer's colors.</dd></div>
+                    <div class="setting"><dt><strong>Show trust badges</strong></dt><dd>Add a trust badge block for each row, up to 4. The row sits under the totals, above the checkout button.</dd></div>
+                  </dl>
+                  <h4>Trust badge block (up to 4)</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Icon</strong>, <strong>Text</strong>, <strong>Link</strong></dt><dd>As in the <a href="#trust-badges">Trust badges</a> section. New blocks start as <em>Secure checkout</em>, so change the text.</dd></div>
+                  </dl>
+                  <p>A new install starts with one badge in the drawer. On a store that already has saved drawer settings, that starting badge may be missing: add it by hand with <strong>Add block → Trust badge</strong>.</p>
+                </div>
+                <div class="item">
+                  <h3 id="cart-page">Cart</h3>
+                  <p>The cart page, as a receipt.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Show dynamic checkout buttons</strong></dt><dd>Shows the accelerated checkout buttons your store offers on the cart page.</dd></div>
+                    <div class="setting"><dt><strong>Show trust badges</strong></dt><dd>Add a trust badge block for each row, up to 4.</dd></div>
+                  </dl>
+                  <h4>Trust badge block (up to 4)</h4>
+                  <p><strong>Icon</strong>, <strong>Text</strong> and <strong>Link</strong>, as above. Only add claims that are true for your store.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Blog -->
+            <section class="doc-section" aria-labelledby="blog-page">
+              <div class="sheet bite">
+                <h2 id="blog-page">Blog page</h2>
+                <div class="item">
+                  <h3 id="blog">Blog</h3>
+                  <p>The blog's articles as cards. The image frame of every card takes the ratio of the first article's image, so cards look best when all featured images share one ratio, such as 3:2.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Show breadcrumbs</strong></dt><dd>Shows only when there is a level between Home and the current page, such as a blog filtered by a tag.</dd></div>
+                    <div class="setting"><dt><strong>Articles per page</strong> <span class="meta">3–24</span> and <strong>Articles per row on desktop</strong> <span class="meta">2–4</span></dt><dd>Cards per page and in a row.</dd></div>
+                    <div class="setting"><dt><strong>Show tag filter</strong></dt><dd>Shows the blog's article tags, so customers can filter the articles.</dd></div>
+                    <div class="setting"><dt><strong>Show author</strong> and <strong>Show date</strong></dt><dd>Show them on each card.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Article -->
+            <section class="doc-section" aria-labelledby="article-page">
+              <div class="sheet bite">
+                <h2 id="article-page">Article page</h2>
+                <div class="item">
+                  <h3 id="article">Article</h3>
+                  <p>The full article, its tags and, when the blog allows them, comments.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Show breadcrumbs</strong></dt><dd>Shows Home, the blog and the article.</dd></div>
+                    <div class="setting"><dt><strong>Show featured image</strong>, <strong>Show author</strong>, <strong>Show date</strong>, <strong>Show tags</strong></dt><dd>Show these parts of the article.</dd></div>
+                    <div class="setting"><dt><strong>Comments per page</strong> <span class="meta">5–50</span></dt><dd>Comments before the next page.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Page -->
+            <section class="doc-section" aria-labelledby="page-template">
+              <div class="sheet bite">
+                <h2 id="page-template">Page</h2>
+                <div class="item">
+                  <h3 id="page-section">Page</h3>
+                  <p>The page's title and content.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Show page content</strong></dt><dd>Turn off when a contact form section on the page shows the content.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="doc-section" aria-labelledby="contact-page">
+              <div class="sheet bite">
+                <h2 id="contact-page">Contact page</h2>
+                <p class="where">The <em>contact</em> page template holds the <strong>Page</strong> section, with its content turned off, and the <strong>Contact form</strong> section. In your Shopify admin, open the page under <strong>Online Store → Pages</strong> and pick the <em>contact</em> template.</p>
+                <div class="item">
+                  <h3 id="contact-form">Contact form</h3>
+                  <p>A form with name, email and message fields. Messages arrive at your store's email address. You can add more fields with blocks; they appear between the email and the message.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The section's colors.</dd></div>
+                    <div class="setting"><dt><strong>Layout</strong> <span class="meta">Text beside form · Text above form</span></dt><dd>Where the intro text sits.</dd></div>
+                    <div class="setting"><dt><strong>Heading</strong></dt><dd>The form's heading.</dd></div>
+                    <div class="setting"><dt><strong>Text</strong></dt><dd>Shown after the page content.</dd></div>
+                    <div class="setting"><dt><strong>Show page content</strong></dt><dd>Shows the page content next to or above the form. Only on pages.</dd></div>
+                  </dl>
+                  <h4>Field blocks</h4>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Phone number</strong>: <strong>Label</strong>, <strong>Required</strong></dt><dd>The phone field. One per form.</dd></div>
+                    <div class="setting"><dt><strong>Text field</strong>, <strong>Multi-line text</strong>, <strong>Checkbox</strong>: <strong>Label</strong>, <strong>Required</strong></dt><dd>A short answer, a longer answer or a check box. The label also names the answer in the email you receive, so use a different label for each field.</dd></div>
+                    <div class="setting"><dt><strong>Dropdown</strong>: <strong>Label</strong>, <strong>Choices</strong>, <strong>Required</strong></dt><dd>A list to pick from. Type one choice per line.</dd></div>
+                  </dl>
+                  <p>Answers to the extra fields arrive in the contact email. <strong>Required</strong> is checked by the customer's browser only; Shopify itself only checks the email and message.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="doc-section" aria-labelledby="faq-page">
+              <div class="sheet bite">
+                <h2 id="faq-page">FAQ page</h2>
+                <p>The <em>faq</em> page template holds the <strong>Page</strong> section and two <strong>Collapsible content</strong> sections with example questions. To use it:</p>
+                <ol class="steps">
+                  <li>In your Shopify admin, go to <strong>Online Store → Pages</strong> and create or open a page.</li>
+                  <li>Under <strong>Theme template</strong>, pick <em>faq</em> and save.</li>
+                  <li>In the theme editor, open that page and replace the example rows with your own questions and answers.</li>
+                </ol>
+                <p>Edit the rows as described under <a href="#collapsible-content">Collapsible content</a>. Only keep answers that are true for your store.</p>
+              </div>
+            </section>
+
+            <!-- Collections list -->
+            <section class="doc-section" aria-labelledby="collections-list-page">
+              <div class="sheet bite">
+                <h2 id="collections-list-page">Collections list page</h2>
+                <div class="item">
+                  <h3 id="collections-list">Collection list</h3>
+                  <p>The page that lists all your collections. It has the same name as the home page section, with its own settings.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Collections per page</strong> <span class="meta">4–48</span></dt><dd>Collections before the next page.</dd></div>
+                    <div class="setting"><dt><strong>Collections per row on desktop</strong> and <strong>Collections per row on mobile</strong></dt><dd>Cards in a row.</dd></div>
+                    <div class="setting"><dt><strong>Show product count</strong></dt><dd>Shows how many products each collection has.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- 404 -->
+            <section class="doc-section" aria-labelledby="not-found">
+              <div class="sheet bite">
+                <h2 id="not-found">404 page</h2>
+                <div class="item">
+                  <h3 id="not-found-section">Not found</h3>
+                  <p>Shown when a page doesn't exist.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+
+            <!-- Gift card -->
+            <section class="doc-section" aria-labelledby="gift-card">
+              <div class="sheet bite">
+                <h2 id="gift-card">Gift card page</h2>
+                <p>The page customers open from their gift card email. It shows the gift card as a ticket: your logo or store name, the balance on a price tag, the expiry date and the code, with a QR code on the stub. Customers can add it to Apple Wallet, copy the code or print it. The page has no settings in the theme editor; it uses your logo and color scheme 1.</p>
+              </div>
+            </section>
+
+            <!-- Password -->
+            <section class="doc-section" aria-labelledby="password-page">
+              <div class="sheet bite">
+                <h2 id="password-page">Password page</h2>
+                <div class="item">
+                  <h3 id="password">Password</h3>
+                  <p>Shown while your store is password protected.</p>
+                  <dl class="settings">
+                    <div class="setting"><dt><strong>Color scheme</strong></dt><dd>The page's colors.</dd></div>
+                    <div class="setting"><dt><strong>Background image</strong></dt><dd>Fills the area behind the sign and is cropped to fit it.</dd></div>
+                    <div class="setting"><dt><strong>Show email signup</strong></dt><dd>Signups are added to your customer list as subscribed to email marketing.</dd></div>
+                    <div class="setting"><dt><strong>Signup heading</strong> and <strong>Signup text</strong></dt><dd>Shown above the email field.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; 2026 Denko Themes. Morph version 1.0.0.</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support-policy.html">Support policy</a></li>
+            <li><a href="mailto:denkothemes@gmail.com">denkothemes@gmail.com</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

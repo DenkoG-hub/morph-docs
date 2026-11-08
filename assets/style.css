@@ -1,0 +1,1098 @@
+/*
+ * Morph documentation styles.
+ * Identity "Tag": paper tags, tickets and receipts. Corners are concave bites cut with a CSS mask
+ * (radial-gradient). Shadows sit on an unmasked wrapper (filter: drop-shadow), because a mask would clip them.
+ * Masked elements never take the focus ring: the ring goes on the link inside or around them.
+ * Cards have no outline; separators are solid 1px rules; shadows are soft and dark.
+ */
+
+:root {
+  --ground: #e4ecf2;
+  --paper: #f6f9fb;
+  --ink: #0f1b2d;
+  --muted: #4a5a70;
+  --accent: #ff5a1f;
+  --focus: #2b64f5;
+  --rule: rgb(15 27 45 / 0.16);
+  --shadow: drop-shadow(0 1px 1px rgb(15 27 45 / 0.1)) drop-shadow(0 6px 14px rgb(15 27 45 / 0.09));
+
+  --font-heading: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-label: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --gutter: 16px;
+  --width: 1160px;
+  --bite-s: 5px;
+  --bite-m: 7px;
+  --bite-l: 10px;
+  --bite-xl: 18px;
+
+  color-scheme: light;
+}
+
+@media (min-width: 750px) {
+  :root {
+    --gutter: 32px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > main {
+  flex: 1 0 auto;
+}
+
+[id] {
+  scroll-margin-top: 16px;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+}
+
+h3 {
+  font-size: 1.0625rem;
+  line-height: 1.3;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 0;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent);
+}
+
+strong {
+  font-weight: 700;
+}
+
+code {
+  font-family: var(--font-label);
+  font-size: 0.875em;
+  font-weight: 600;
+  background: var(--ground);
+  padding: 1px 5px;
+  overflow-wrap: anywhere;
+}
+
+/* Focus: blue ring, 3px, 3px away. Over dark fills a paper gap keeps the ring apart from the fill. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--width) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Bites (concave corners) ---------- */
+
+.bite {
+  --b: var(--bite-l);
+  -webkit-mask:
+    radial-gradient(circle var(--b) at 0 0, #0000 98%, #000) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 0, #0000 98%, #000) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 0 100%, #0000 98%, #000) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 100%, #0000 98%, #000) 100% 100% / 51% 51% no-repeat;
+  mask:
+    radial-gradient(circle var(--b) at 0 0, #0000 98%, #000) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 0, #0000 98%, #000) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 0 100%, #0000 98%, #000) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 100%, #0000 98%, #000) 100% 100% / 51% 51% no-repeat;
+}
+
+.bite--s {
+  --b: var(--bite-s);
+}
+
+.bite--m {
+  --b: var(--bite-m);
+}
+
+.bite--xl {
+  --b: var(--bite-xl);
+}
+
+/* Shadow holder: unmasked, so the drop shadow follows the bitten shape inside it. */
+.lift {
+  filter: var(--shadow);
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+  box-shadow: 0 0 0 3px var(--paper);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--paper);
+  box-shadow: 0 1px 0 var(--rule), 0 4px 12px rgb(15 27 45 / 0.05);
+  position: relative;
+  z-index: 5;
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  min-height: 64px;
+  padding-block: 10px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand__stamp {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  transform: rotate(-8deg);
+}
+
+.brand__docs {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--ground);
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 600 0.8125rem/1 var(--font-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+  box-shadow: 0 0 0 3px var(--paper);
+}
+
+.nav-toggle__icon {
+  width: 16px;
+  height: 12px;
+  background:
+    linear-gradient(currentColor 0 0) 0 0 / 100% 2px no-repeat,
+    linear-gradient(currentColor 0 0) 0 50% / 100% 2px no-repeat,
+    linear-gradient(currentColor 0 0) 0 100% / 100% 2px no-repeat;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon {
+  background:
+    linear-gradient(45deg, #0000 calc(50% - 1px), currentColor 0 calc(50% + 1px), #0000 0),
+    linear-gradient(-45deg, #0000 calc(50% - 1px), currentColor 0 calc(50% + 1px), #0000 0);
+}
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: var(--ground);
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-nav a[aria-current="page"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--paper);
+}
+
+@media (max-width: 1023px) {
+  .js .nav-toggle {
+    display: inline-flex;
+  }
+
+  .js .site-nav {
+    display: none;
+    flex-basis: 100%;
+    padding-bottom: 8px;
+  }
+
+  .js .site-nav.is-open {
+    display: block;
+  }
+
+  .js .site-nav ul {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .js .site-nav a {
+    display: flex;
+    min-height: 44px;
+    padding-inline: 14px;
+  }
+}
+
+/* ---------- Main ---------- */
+
+main {
+  display: block;
+  padding-block: 28px 48px;
+}
+
+@media (min-width: 750px) {
+  main {
+    padding-block: 36px 64px;
+  }
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Page head: eyebrow, the title on a small paper tag with a punched hole, the lead. */
+.page-head {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  margin-bottom: 28px;
+  max-width: 760px;
+}
+
+.page-head--center {
+  justify-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.title-tag {
+  filter: var(--shadow);
+  transform: rotate(-1.2deg);
+}
+
+/* Four corner bites and a punched hole near the left edge (exclude: each circle becomes a hole). */
+.title-tag__paper {
+  --b: var(--bite-m);
+  position: relative;
+  background: var(--paper);
+  padding: 10px 22px 12px 46px;
+  mask:
+    radial-gradient(circle var(--b) at 0 0, #000 98%, #0000),
+    radial-gradient(circle var(--b) at 100% 0, #000 98%, #0000),
+    radial-gradient(circle var(--b) at 0 100%, #000 98%, #0000),
+    radial-gradient(circle var(--b) at 100% 100%, #000 98%, #0000),
+    radial-gradient(circle 5px at 20px 50%, #000 98%, #0000),
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.title-tag__paper::before {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: var(--rule);
+}
+
+.lead {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  max-width: 68ch;
+}
+
+/* ---------- Buttons: ticket stubs (primary) and tags (secondary) ---------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.page-head--center .actions {
+  justify-content: center;
+}
+
+/* The link holds the ring; the masked paper inside it holds the bites. */
+.stub {
+  display: inline-flex;
+  text-decoration: none;
+  filter: var(--shadow);
+}
+
+.stub:hover {
+  text-decoration: none;
+}
+
+.stub__paper {
+  --b: var(--bite-m);
+  display: inline-flex;
+  align-items: stretch;
+  min-height: 46px;
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 700;
+  -webkit-mask:
+    radial-gradient(circle var(--b) at 0 0, #0000 98%, #000) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 0, #0000 98%, #000) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 0 100%, #0000 98%, #000) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 100%, #0000 98%, #000) 100% 100% / 51% 51% no-repeat;
+  mask:
+    radial-gradient(circle var(--b) at 0 0, #0000 98%, #000) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 0, #0000 98%, #000) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 0 100%, #0000 98%, #000) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle var(--b) at 100% 100%, #0000 98%, #000) 100% 100% / 51% 51% no-repeat;
+}
+
+.stub__label {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px 10px 20px;
+}
+
+.stub__end {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-label);
+  font-weight: 600;
+}
+
+.stub:focus-visible {
+  box-shadow: 0 0 0 3px var(--paper);
+}
+
+.tag-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgb(15 27 45 / 0.12);
+}
+
+.tag-link::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ground);
+  box-shadow: inset 0 1px 2px rgb(15 27 45 / 0.35);
+}
+
+.tag-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+/* ---------- Cards and panels ---------- */
+
+.grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .grid--2,
+  .grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  filter: var(--shadow);
+  display: flex;
+}
+
+/* Card paper: label strip on top with two punched notches where it ends. */
+.card__paper {
+  --b: var(--bite-l);
+  --strip: 38px;
+  flex: 1;
+  background: var(--paper);
+  display: grid;
+  grid-template-rows: var(--strip) auto 1fr;
+  mask:
+    radial-gradient(circle var(--b) at 0 0, #000 98%, #0000),
+    radial-gradient(circle var(--b) at 100% 0, #000 98%, #0000),
+    radial-gradient(circle var(--b) at 0 100%, #000 98%, #0000),
+    radial-gradient(circle var(--b) at 100% 100%, #000 98%, #0000),
+    radial-gradient(circle 6px at 0 var(--strip), #000 98%, #0000),
+    radial-gradient(circle 6px at 100% var(--strip), #000 98%, #0000),
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.card__strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.card__body {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 14px 18px 20px;
+  grid-row: 2 / 4;
+}
+
+.card__body p {
+  color: var(--ink);
+}
+
+/* Whole card as one link. The link itself is unmasked and takes the ring; the paper inside it is masked. */
+.card__link {
+  display: flex;
+  flex: 1;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.card__link:hover {
+  text-decoration: none;
+}
+
+.card__link:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+/* Small price tag: accent fill, ink text, punched hole, tilted. Decorative. */
+.price-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 22px;
+  padding: 2px 9px 2px 8px;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding-left: 16px;
+  mask:
+    radial-gradient(circle var(--bite-s) at 0 0, #000 98%, #0000),
+    radial-gradient(circle var(--bite-s) at 100% 0, #000 98%, #0000),
+    radial-gradient(circle var(--bite-s) at 0 100%, #000 98%, #0000),
+    radial-gradient(circle var(--bite-s) at 100% 100%, #000 98%, #0000),
+    radial-gradient(circle 3px at 9px 50%, #000 98%, #0000),
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transform: rotate(-4deg);
+  transform-origin: 9px 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card .price-tag {
+    transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1);
+  }
+
+  .card:hover .price-tag {
+    transform: rotate(5deg);
+  }
+
+  .card {
+    transition: transform 0.25s ease;
+  }
+
+  .card--link:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Doc sections: paper sheets on the ground. */
+.doc-section {
+  filter: var(--shadow);
+  margin-bottom: 20px;
+  scroll-margin-top: 16px;
+}
+
+.sheet {
+  --b: var(--bite-l);
+  background: var(--paper);
+  padding: 22px 18px 24px;
+  display: grid;
+  gap: 14px;
+}
+
+@media (min-width: 750px) {
+  .sheet {
+    padding: 28px 32px 30px;
+  }
+}
+
+.sheet > p,
+.sheet li,
+.sheet dd {
+  max-width: 72ch;
+}
+
+.sheet h3 {
+  margin-top: 6px;
+}
+
+.sheet ul,
+.sheet ol {
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 6px;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-title .eyebrow {
+  margin-left: auto;
+}
+
+/* Numbered steps with round stamps. */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding-left: 0 !important;
+  gap: 10px !important;
+}
+
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 40px;
+  min-height: 28px;
+}
+
+.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+/* Note: ground-colored slip inside a sheet. */
+.note {
+  --b: var(--bite-s);
+  background: var(--ground);
+  padding: 12px 16px;
+  display: grid;
+  gap: 4px;
+}
+
+.note .eyebrow {
+  color: var(--muted);
+}
+
+/* Settings lists (definition lists with solid rules). */
+.settings {
+  display: grid;
+}
+
+.setting {
+  display: grid;
+  gap: 4px;
+  padding-block: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.setting:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.setting dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+
+.setting dd {
+  margin: 0;
+}
+
+.setting dd + dd {
+  margin-top: 6px;
+}
+
+.meta {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.subhead {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 6px;
+}
+
+/* ---------- Docs layout with an "On this page" receipt ---------- */
+
+.doc-layout {
+  display: grid;
+  gap: 20px;
+}
+
+/*
+ * The list is a receipt: flat top, torn bottom edge. The paper (mask) and its shadow (filter) are an absolute
+ * layer beside the list, never around it, so the list can scroll on its own without a masked ancestor.
+ */
+.toc {
+  position: relative;
+}
+
+.toc__shadow {
+  position: absolute;
+  inset: 0;
+  filter: var(--shadow);
+  pointer-events: none;
+}
+
+.receipt-paper {
+  position: absolute;
+  inset: 0;
+  background: var(--paper);
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 14px 100%;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 14px 100%;
+}
+
+.receipt {
+  position: relative;
+  padding: 16px 18px 26px;
+}
+
+@media (min-width: 1024px) {
+  .doc-layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 16px;
+  }
+
+  .toc .receipt {
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+}
+
+.receipt h2 {
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.receipt ol {
+  list-style: none;
+  padding: 6px 0 0;
+  counter-reset: toc;
+}
+
+.receipt li {
+  counter-increment: toc;
+}
+
+.receipt a {
+  display: flex;
+  gap: 10px;
+  padding: 5px 2px;
+  min-height: 30px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.receipt a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding-top: 2px;
+}
+
+.receipt a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+/* Second level of the list: indented, no numbers. */
+.receipt ol ol {
+  padding: 0 0 4px 30px;
+}
+
+.receipt ol ol a {
+  min-height: 26px;
+  padding-block: 3px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.receipt ol ol a::before {
+  content: none;
+}
+
+/* Feature list panel on the home page. */
+.feature-list {
+  list-style: none;
+  padding: 0 !important;
+  gap: 0 !important;
+}
+
+.feature-list li {
+  padding-block: 10px;
+  border-top: 1px solid var(--rule);
+  max-width: none;
+}
+
+.feature-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.home-section {
+  margin-bottom: 32px;
+}
+
+.home-section > h2 {
+  margin-bottom: 14px;
+}
+
+/* Sections page: one item per section, blocks as small mono headings. */
+.item {
+  display: grid;
+  gap: 10px;
+}
+
+.item + .item {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  margin-top: 6px;
+}
+
+.sheet h4 {
+  margin: 4px 0 0;
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.where {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Changelog version stamp. */
+.version {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+.contact-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-block: 20px;
+  font-size: 0.9375rem;
+}
+
+.site-footer a {
+  color: var(--paper);
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.site-footer a:hover {
+  text-decoration-color: var(--accent);
+}
+
+.site-footer a:focus-visible {
+  box-shadow: 0 0 0 3px var(--paper);
+  outline-color: var(--focus);
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+/* ---------- Motion and forced colors ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (forced-colors: active) {
+  .bite,
+  .title-tag__paper,
+  .stub__paper,
+  .card__paper,
+  .receipt-paper,
+  .note {
+    -webkit-mask: none;
+    mask: none;
+    clip-path: none;
+    border: 1px solid CanvasText;
+  }
+
+  .lift,
+  .card,
+  .doc-section,
+  .toc__shadow,
+  .stub,
+  .title-tag {
+    filter: none;
+  }
+
+  .price-tag {
+    mask: none;
+    border: 1px solid CanvasText;
+  }
+
+  .tag-link,
+  .nav-toggle,
+  .site-nav a[aria-current="page"] {
+    border: 1px solid CanvasText;
+  }
+
+  .site-nav a[aria-current="page"] {
+    text-decoration: underline;
+  }
+}

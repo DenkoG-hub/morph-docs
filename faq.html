@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAQ | Morph theme docs</title>
+    <meta name="description" content="Short answers about the Morph Shopify theme: swatches, filters, variant images, menus, selectors, Follow on Shop, cart, back in stock, metafields, popups, gift wrap, updates, translations, discounts and code edits.">
+    <meta name="theme-color" content="#E4ECF2">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&amp;family=Figtree:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@600&amp;display=swap">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html"><span class="brand__stamp" aria-hidden="true">M</span>Morph <span class="brand__docs">docs</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="getting-started.html">Getting started</a></li>
+            <li><a href="theme-settings.html">Theme settings</a></li>
+            <li><a href="sections.html">Sections</a></li>
+            <li><a href="faq.html" aria-current="page">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support-policy.html">Support policy</a></li>
+            <li><a href="changelog.html">Changelog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="container">
+        <div class="page-head">
+          <span class="eyebrow">Answers</span>
+          <div class="title-tag"><div class="title-tag__paper"><h1>FAQ</h1></div></div>
+          <p class="lead">Short answers to common questions. Each one links to the full steps.</p>
+        </div>
+
+        <div class="doc-layout">
+          <nav class="toc" aria-labelledby="toc-heading">
+            <div class="toc__shadow" aria-hidden="true"><div class="receipt-paper"></div></div>
+            <div class="receipt">
+              <h2 id="toc-heading">On this page</h2>
+              <ol>
+                <li><a href="#swatches">Swatches don't show</a></li>
+                <li><a href="#filters">Adding filters</a></li>
+                <li><a href="#variant-images">Variant images</a></li>
+                <li><a href="#mega-menu">Mega menu and level 3 links</a></li>
+                <li><a href="#selectors">Country or language selector</a></li>
+                <li><a href="#follow-on-shop">Follow on Shop doesn't show</a></li>
+                <li><a href="#cart-type">Cart drawer or cart page</a></li>
+                <li><a href="#back-in-stock">Back in stock emails</a></li>
+                <li><a href="#metafields">Size chart and label tabs</a></li>
+                <li><a href="#popup-discount">Popup discount code</a></li>
+                <li><a href="#gift-wrap">Gift wrap</a></li>
+                <li><a href="#updating">Updating the theme</a></li>
+                <li><a href="#translating">Translating</a></li>
+                <li><a href="#discount-codes">Discount codes</a></li>
+                <li><a href="#editing-code">Editing the code</a></li>
+              </ol>
+            </div>
+          </nav>
+
+          <div class="doc-body">
+            <section class="doc-section" aria-labelledby="swatches">
+              <div class="sheet bite">
+                <h2 id="swatches">Why don't color swatches show?</h2>
+                <p>Swatches need the product's color option connected to the Color category metafield. In your Shopify admin, choose the product's <strong>Category</strong>, then under <strong>Category metafields</strong> click <strong>Color</strong> and choose <strong>Connect to option</strong>. Some categories have no Color metafield; pick a nearby category that has one.</p>
+                <p>Then check <strong>Theme settings → Product cards → Show color swatches</strong> and, on the product page, <strong>Variant picker → Show swatches</strong>. Cards show swatches for an option with at least two values. See <a href="getting-started.html#variant-images">Variant images and swatches</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="filters">
+              <div class="sheet bite">
+                <h2 id="filters">How do I add filters?</h2>
+                <p>Filters come from Shopify's Search &amp; Discovery app. Add them in the app, including option filters such as Size and Color and swatch filters, then check <strong>Show filters</strong> in the <strong>Collection</strong> and <strong>Search</strong> sections. See <a href="getting-started.html#filters">Filters</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="variant-images">
+              <div class="sheet bite">
+                <h2 id="variant-images">Why doesn't the image change when a swatch is picked?</h2>
+                <p>Card swatches and quick view need an image attached to each variant. Add the images to the product, then open each variant in your Shopify admin and pick its image. See <a href="getting-started.html#variant-images">Variant images and swatches</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="mega-menu">
+              <div class="sheet bite">
+                <h2 id="mega-menu">How do I set up the mega menu and level 3 links?</h2>
+                <p>In the theme editor, click <strong>Header</strong> and set <strong>Menu style</strong> to <strong>Mega menu</strong>. Then nest your menu in <strong>Content → Menus</strong>: level 2 links with links under them become columns, and their level 3 links hang under them as tags.</p>
+                <p>For a level 3 link that shows part of a collection, add a collection link and use <strong>Filter collection with tags</strong>; the products need that tag. Product type filters need the Search &amp; Discovery app. Tag-filtered links show no product count. See <a href="getting-started.html#menus">Menus</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="selectors">
+              <div class="sheet bite">
+                <h2 id="selectors">Why doesn't the country or language selector show?</h2>
+                <p>Each selector shows only when there is more than one choice: more than one country or region in <strong>Settings → Markets</strong>, or more than one published language in <strong>Settings → Languages</strong>. Also check <strong>Show country or region selector</strong> and <strong>Show language selector</strong> in the <strong>Footer</strong>. See <a href="getting-started.html#markets">Markets</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="follow-on-shop">
+              <div class="sheet bite">
+                <h2 id="follow-on-shop">Why doesn't Follow on Shop show?</h2>
+                <p>The button shows only when Shop Pay is turned on in <strong>Settings → Payments</strong> and the Shop sales channel is installed, and <strong>Show Follow on Shop</strong> is checked in the <strong>Footer</strong>. See <a href="getting-started.html#follow-on-shop">Follow on Shop</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="cart-type">
+              <div class="sheet bite">
+                <h2 id="cart-type">Should I use the cart drawer or the cart page?</h2>
+                <p>Both work the same way. The drawer keeps customers on the page they're shopping; the page gives the cart its own address. Choose in <strong>Theme settings → Cart → Cart type</strong>. See <a href="theme-settings.html#cart">Cart</a> and <a href="sections.html#cart">Cart drawer and cart page</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="back-in-stock">
+              <div class="sheet bite">
+                <h2 id="back-in-stock">Where do back in stock requests go?</h2>
+                <p>With <strong>Show back in stock form</strong> on in the <strong>Buy buttons</strong> block, sold out variants show a <strong>Notify me</strong> button. Requests arrive as contact form emails with the product and variant. Customers aren't alerted automatically, so reply to them yourself when the product is back. The form isn't shown in quick view. See <a href="sections.html#buy-buttons-block">Buy buttons</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="metafields">
+              <div class="sheet bite">
+                <h2 id="metafields">How do I show a different size chart or tab on each product?</h2>
+                <p>Connect the block's <strong>Content</strong> to a product metafield with dynamic sources. This works for the <strong>Size chart</strong> block, the custom tabs of the <strong>Product label</strong> block and the <strong>Collapsible row</strong> block. For the size chart, <strong>Option name</strong> must match a product option (capital letters don't matter), and a picked <strong>Page</strong> wins over the content. See <a href="sections.html#size-chart-block">Size chart</a> and <a href="sections.html#product-label-block">Product label</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="popup-discount">
+              <div class="sheet bite">
+                <h2 id="popup-discount">How do I offer a discount code in the popup?</h2>
+                <p>Create the code in <strong>Discounts</strong> in your Shopify admin first. Then type it in the <strong>Discount code</strong> setting of the <strong>Promo popup</strong>. It's shown only after a successful signup. See <a href="sections.html#promo-popup">Promo popup</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="gift-wrap">
+              <div class="sheet bite">
+                <h2 id="gift-wrap">How do I set up gift wrap?</h2>
+                <p>Create a gift wrap product, make it available on the Online Store sales channel, hide it from search with the <code>seo.hidden</code> metafield set to <code>1</code>, and pick it in <strong>Theme settings → Cart → Gift wrap product</strong>. Gift wrap left alone in the cart is removed automatically. See <a href="getting-started.html#gift-wrap">Gift wrap</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="updating">
+              <div class="sheet bite">
+                <h2 id="updating">How do I update Morph?</h2>
+                <p>When an update is available, Shopify shows it in <strong>Online Store → Themes</strong>. Duplicate your theme first so you have a backup. Updating adds the new version to your theme library with your theme editor settings and content carried over. Changes made directly in the code are not carried over. Check the new version, then publish it. See the <a href="changelog.html">Changelog</a>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="translating">
+              <div class="sheet bite">
+                <h2 id="translating">How do I translate my store?</h2>
+                <p>Add languages in <strong>Settings → Languages</strong>, then translate your content with Shopify's Translate &amp; Adapt app. To change the theme's own texts in your default language, such as button labels, go to <strong>Online Store → Themes</strong>, click the <strong>…</strong> (actions) button and choose <strong>Edit default theme content</strong>.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="discount-codes">
+              <div class="sheet bite">
+                <h2 id="discount-codes">How do discount codes work?</h2>
+                <p>Create discounts in <strong>Discounts</strong> in your Shopify admin. Customers enter discount codes at checkout. Discounts that apply to the whole order are listed in the totals of the cart drawer and cart page.</p>
+              </div>
+            </section>
+
+            <section class="doc-section" aria-labelledby="editing-code">
+              <div class="sheet bite">
+                <h2 id="editing-code">Can I edit the theme code?</h2>
+                <p>You can, but we can't support code changes. Duplicate the theme first so you can go back, and keep in mind that code changes aren't carried over when you update. For custom work, hire a Shopify Partner. See the <a href="support-policy.html">Support policy</a>.</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; 2026 Denko Themes. Morph version 1.0.0.</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="support-policy.html">Support policy</a></li>
+            <li><a href="mailto:denkothemes@gmail.com">denkothemes@gmail.com</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
